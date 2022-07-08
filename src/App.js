@@ -1,50 +1,41 @@
+import { useState } from 'react';
 import './App.css';
-import { useState } from "react"
+import Grid from "./components/grid/GridItem"
+import Sidebar from './components/sidebar/Sidebar';
+import Image1 from "./images/1.jpg"
+import Image2 from "./images/2.jpg"
+import Image3 from "./images/3.jpg"
+import Image4 from "./images/4.jpg"
+import Image5 from "./images/5.jpg"
+// import { GridIte } from "./components/grid/GridItem"
+
 
 function App() {
-  const [aa, setClick] = useState(false)
-  const [data, setData] = useState({
-    name: "Ali",
-    username: "Ali99"
-  })
-  const makeObj = () => {
-    setData({ name: "Axmad", username: "Ortiqov" })
+  const [click, setClick] = useState(false)
+  const Click = () => {
+    if (click === false) {
+      setClick(true)
+    } else {
+      setClick(false)
+    }
   }
-  console.log(data);
-
-  // const [dataArr, setDataArr] = useState([
-  //   {
-  //     id: 1,
-  //     name: "Ali",
-  //     username: "Ali99"
-  //   },
-  //   {
-  //     id: 2,
-  //     name: "Ali2",
-  //     username: "Ali992"
-  //   }
-  // ])
-  // console.log(dataArr);
+  console.log(click);
 
 
-
-  // console.log("click >>>", aa);
-  // const changeBack = () => {
-  //   if (aa === false) {
-  //     setClick(true)
-  //   } else {
-  //     setClick(false)
-  //   }
-  // }
   return (
-    <div className={`App ${aa ? "dark" : ""}`}>
-      <h1 style={{ color: aa ? "white" : "black" }}>Salom</h1>
-      {/* <button onClick={changeBack}>change Back</button> */}
-      <br />
-      <br />
-      {/* <button onClick={() => { !aa ? setClick(true) : setClick(false) }}>change Back2</button> */}
+    <div className={`App`}>
 
-      <button onClick={makeObj}> MAke Obj</button>
+      <Sidebar />
+      <button onClick={Click} >Button</button>
+      <div className="">
+        <Grid text={"Axmad"} image={Image1} />
+        <Grid text={"Sardor"} image={Image2} />
+        <Grid text={"Muhammadali"} image={Image3} />
+        <Grid text={"Maqsudbek"} image={Image4} />
+        <Grid text={"Xasanboy"} image={Image5} />
+      </div>
+
+
     </div >
   );
 }
