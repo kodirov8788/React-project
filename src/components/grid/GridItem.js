@@ -5,7 +5,6 @@ const GridItem = (props) => {
         <div className="grid">
             <img src={props.image} alt="" />
             <h1>Salom, {props.text}</h1>
-
         </div>
     )
 
