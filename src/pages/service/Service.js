@@ -1,9 +1,11 @@
 import React from 'react'
-import "Service.css"
+import "./Service.css"
 
 const Service = () => {
     return (
-        <div>Service</div>
+        <div className='service'>
+            <h1>Service</h1>
+        </div>
     )
 }
 
